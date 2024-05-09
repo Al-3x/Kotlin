@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity() {
                 val reais = String.format("%.2f", dolares.toDouble() * taxa.toDouble())
                 binding.textResultado.text = "R$ " + reais
             }else{
-                Toast.makeText(applicationContext,"Digite os dados",Toast.LENGTH_LONG).show()
+                Toast.makeText(applicationContext,"erro!",Toast.LENGTH_LONG).show()
             }
         }
     }
