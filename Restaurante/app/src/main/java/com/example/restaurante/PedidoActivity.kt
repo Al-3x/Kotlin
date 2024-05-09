@@ -11,11 +11,13 @@ class PedidoActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
+        //atribui um valor a variavel
         val i = intent
         val quantidadePizza = i.getStringExtra("quantidadePizza").toString().toInt()
         val quantidadeSalada = i.getStringExtra("quantidadeSalada").toString().toInt()
         val quantidadeHamburguer = i.getStringExtra("quantidadeHamburguer").toString().toInt()
 
+        //mostra a quantidade e o preço
         val texto = "Resumo do Pedido\n" +
                 "Pizza: $quantidadePizza Preço: ${quantidadePizza*8}\n" +
                 "Salada: $quantidadeSalada Preço: ${quantidadeSalada*10}\n" +
