@@ -10,6 +10,7 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var binding:ActivityMainBinding
 
+    //Aqui, estamos substituindo o método onCreate da classe base
     override fun onCreate(savedInstanceState: Bundle?) {
         binding = ActivityMainBinding.inflate(layoutInflater)
 
@@ -19,14 +20,17 @@ class MainActivity : AppCompatActivity() {
 
         val username = intent.extras?.getString("username")
 
+        //Aqui, estamos verificando se a variável username não é nula e não está vazia (ou seja, tem algum valor)
         if(!username.isNullOrEmpty()){
             binding.textOla.setText("Olá $username")
         }
 
+        //Aqui, estamos configurando um ouvinte de clique para o botão chamado buttonFechar
         binding.buttonFechar.setOnClickListener {
             finishAffinity()
         }
 
+        //Vai mostrar a quantidade de itens selecionados e mostrar o valor
         binding.buttonPedir.setOnClickListener {
             val i = Intent(this, SplashActivity::class.java)
             i.putExtra("quantidadePizza", binding.editQuantidadePizza.text.toString())
