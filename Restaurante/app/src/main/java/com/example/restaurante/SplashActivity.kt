@@ -12,9 +12,12 @@ class SplashActivity : AppCompatActivity() {
         setContentView(R.layout.activity_splash)
 
         Handler(Looper.getMainLooper()).postDelayed({
+            //atribui um valor
             val i = intent
+            //vai iniciar a atividade pedido activity
             val j = Intent(this,PedidoActivity::class.java)
             j.putExtras(i)
+            //vai iniciar a atividade
             startActivity(j)
         },2000)
 
